@@ -232,6 +232,7 @@ export interface AppData {
         };
         appearance?: {
             density?: 'comfortable' | 'compact';
+            fontScale?: number; // percent, e.g. 100 = default, 125 = 25% larger; valid range 50–250
         };
         theme?: 'light' | 'dark' | 'system' | 'eink' | 'nord' | 'sepia' | 'material3-light' | 'material3-dark' | 'oled';
         language?: 'en' | 'zh' | 'zh-Hant' | 'es' | 'hi' | 'ar' | 'de' | 'ru' | 'ja' | 'fr' | 'pt' | 'pl' | 'ko' | 'it' | 'tr' | 'nl' | 'system';

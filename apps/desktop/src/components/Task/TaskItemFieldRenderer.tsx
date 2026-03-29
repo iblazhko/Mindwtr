@@ -517,7 +517,7 @@ export function TaskItemFieldRenderer({
                     </select>
                     {editRecurrence === 'daily' && (
                         <div className="flex items-center gap-2 pt-1">
-                            <span className="text-[10px] text-muted-foreground">{t('recurrence.repeatEvery')}</span>
+                            <span className="text-[0.625rem] text-muted-foreground">{t('recurrence.repeatEvery')}</span>
                             <input
                                 type="number"
                                 min={1}
@@ -532,11 +532,11 @@ export function TaskItemFieldRenderer({
                                 }}
                                 className="w-20 text-xs bg-muted/50 border border-border rounded px-2 py-1 text-foreground"
                             />
-                            <span className="text-[10px] text-muted-foreground">{t('recurrence.dayUnit')}</span>
+                            <span className="text-[0.625rem] text-muted-foreground">{t('recurrence.dayUnit')}</span>
                         </div>
                     )}
                     {editRecurrence && (
-                        <label className="flex items-center gap-2 pt-1 text-[10px] text-muted-foreground">
+                        <label className="flex items-center gap-2 pt-1 text-[0.625rem] text-muted-foreground">
                             <input
                                 type="checkbox"
                                 checked={editRecurrenceStrategy === 'fluid'}
@@ -548,7 +548,7 @@ export function TaskItemFieldRenderer({
                     )}
                     {editRecurrence === 'weekly' && (
                         <div className="pt-1">
-                            <span className="text-[10px] text-muted-foreground">{t('recurrence.repeatOn')}</span>
+                            <span className="text-[0.625rem] text-muted-foreground">{t('recurrence.repeatOn')}</span>
                             <WeekdaySelector
                                 value={editRecurrenceRRule || buildRRuleString('weekly')}
                                 onChange={(rrule) => setEditRecurrenceRRule(rrule)}
@@ -558,13 +558,13 @@ export function TaskItemFieldRenderer({
                     )}
                     {editRecurrence === 'monthly' && (
                         <div className="pt-1 space-y-2">
-                            <span className="text-[10px] text-muted-foreground">{t('recurrence.repeatOn')}</span>
+                            <span className="text-[0.625rem] text-muted-foreground">{t('recurrence.repeatOn')}</span>
                             <div className="flex flex-wrap gap-2">
                                 <button
                                     type="button"
                                     onClick={() => setEditRecurrenceRRule(buildRRuleString('monthly'))}
                                     className={cn(
-                                        'text-[10px] px-2 py-1 rounded border transition-colors',
+                                        'text-[0.625rem] px-2 py-1 rounded border transition-colors',
                                         monthlyRecurrence.pattern === 'date'
                                             ? 'bg-primary text-primary-foreground border-primary'
                                             : 'bg-transparent text-muted-foreground border-border hover:bg-accent'
@@ -576,7 +576,7 @@ export function TaskItemFieldRenderer({
                                     type="button"
                                     onClick={openCustomRecurrence}
                                     className={cn(
-                                        'text-[10px] px-2 py-1 rounded border transition-colors',
+                                        'text-[0.625rem] px-2 py-1 rounded border transition-colors',
                                         monthlyRecurrence.pattern === 'custom'
                                             ? 'bg-primary text-primary-foreground border-primary'
                                             : 'bg-transparent text-muted-foreground border-border hover:bg-accent'
@@ -642,7 +642,7 @@ export function TaskItemFieldRenderer({
                                         setEditContexts(newTags.join(', '));
                                     }}
                                     className={cn(
-                                        "text-[10px] px-2 py-0.5 rounded-full border transition-colors",
+                                        "text-[0.625rem] px-2 py-0.5 rounded-full border transition-colors",
                                         isActive
                                             ? "bg-primary/10 border-primary text-primary"
                                             : "bg-transparent border-border text-muted-foreground hover:border-primary/50"
@@ -685,7 +685,7 @@ export function TaskItemFieldRenderer({
                                         setEditTags(newTags.join(', '));
                                     }}
                                     className={cn(
-                                        "text-[10px] px-2 py-0.5 rounded-full border transition-colors",
+                                        "text-[0.625rem] px-2 py-0.5 rounded-full border transition-colors",
                                         isActive
                                             ? "bg-primary/10 border-primary text-primary"
                                             : "bg-transparent border-border text-muted-foreground hover:border-primary/50"

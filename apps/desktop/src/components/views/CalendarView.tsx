@@ -519,12 +519,12 @@ export function CalendarView() {
                                     {(taskCount > 0 || eventCount > 0) && (
                                         <div className="flex items-center gap-1">
                                             {taskCount > 0 && (
-                                                <div className="text-[10px] px-1.5 rounded bg-primary/10 text-primary border border-primary/20">
+                                                <div className="text-[0.625rem] px-1.5 rounded bg-primary/10 text-primary border border-primary/20">
                                                     {taskCount}
                                                 </div>
                                             )}
                                             {eventCount > 0 && (
-                                                <div className="text-[10px] px-1.5 rounded bg-muted/60 text-muted-foreground border border-border">
+                                                <div className="text-[0.625rem] px-1.5 rounded bg-muted/60 text-muted-foreground border border-border">
                                                     {eventCount}
                                                 </div>
                                             )}

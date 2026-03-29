@@ -191,8 +191,8 @@ export function InboxProcessingWizard({
                             <ChevronLeft className="w-4 h-4" />
                         </button>
                     )}
-                    <h3 className="font-semibold text-[15px]">📋 {t('process.title')}</h3>
-                    <span className="text-[11px] font-medium text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">
+                    <h3 className="font-semibold text-[0.9375rem]">📋 {t('process.title')}</h3>
+                    <span className="text-[0.6875rem] font-medium text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">
                         {remainingCount} {t('process.remaining')}
                     </span>
                 </div>
@@ -259,7 +259,7 @@ export function InboxProcessingWizard({
                     <p className="text-center text-sm text-muted-foreground">{t('process.refineDesc')}</p>
                     <div className="space-y-3">
                         <div className="space-y-1">
-                            <label className="text-[11px] text-muted-foreground font-medium">{t('taskEdit.titleLabel')}</label>
+                            <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('taskEdit.titleLabel')}</label>
                             <input
                                 value={processingTitle}
                                 onChange={(e) => setProcessingTitle(e.target.value)}
@@ -267,7 +267,7 @@ export function InboxProcessingWizard({
                             />
                         </div>
                         <div className="space-y-1">
-                            <label className="text-[11px] text-muted-foreground font-medium">{t('taskEdit.descriptionLabel')}</label>
+                            <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('taskEdit.descriptionLabel')}</label>
                             <textarea
                                 value={processingDescription}
                                 onChange={(e) => setProcessingDescription(e.target.value)}
@@ -278,7 +278,7 @@ export function InboxProcessingWizard({
                         </div>
                         {showProjectInRefine && (
                             <div className="space-y-1">
-                                <label className="text-[11px] text-muted-foreground font-medium">{t('taskEdit.projectLabel')}</label>
+                                <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('taskEdit.projectLabel')}</label>
                                 <ProjectSelector
                                     projects={projects}
                                     value={selectedProjectId ?? ''}
@@ -303,7 +303,7 @@ export function InboxProcessingWizard({
                         )}
                         {showProjectInRefine && !selectedProjectId && (
                             <div className="space-y-1">
-                                <label className="text-[11px] text-muted-foreground font-medium">{t('taskEdit.areaLabel')}</label>
+                                <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('taskEdit.areaLabel')}</label>
                                 <select
                                     value={selectedAreaId ?? ''}
                                     onChange={(event) => setSelectedAreaId(event.target.value || null)}
@@ -576,7 +576,7 @@ export function InboxProcessingWizard({
 
                     {suggestedContexts.length > 0 && (
                         <div className="space-y-2">
-                            <div className="text-[11px] uppercase tracking-wide text-muted-foreground font-semibold">
+                            <div className="text-[0.6875rem] uppercase tracking-wide text-muted-foreground font-semibold">
                                 {t('taskEdit.contextsLabel')}
                             </div>
                             <div className="flex flex-wrap gap-2 justify-center">
@@ -616,7 +616,7 @@ export function InboxProcessingWizard({
                     )}
 
                     <div className="space-y-2">
-                        <div className="text-[11px] uppercase tracking-wide text-muted-foreground font-semibold">
+                        <div className="text-[0.6875rem] uppercase tracking-wide text-muted-foreground font-semibold">
                             {t('taskEdit.tagsLabel')}
                         </div>
                         <div className="flex gap-2">

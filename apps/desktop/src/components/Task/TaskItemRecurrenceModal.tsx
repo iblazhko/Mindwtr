@@ -94,7 +94,7 @@ export function TaskItemRecurrenceModal({
                                 type="button"
                                 onClick={() => onModeChange('date')}
                                 className={cn(
-                                    'text-[10px] px-2 py-1 rounded border transition-colors',
+                                    'text-[0.625rem] px-2 py-1 rounded border transition-colors',
                                     customMode === 'date'
                                         ? 'bg-primary text-primary-foreground border-primary'
                                         : 'bg-transparent text-muted-foreground border-border hover:bg-accent'
@@ -106,7 +106,7 @@ export function TaskItemRecurrenceModal({
                                 type="button"
                                 onClick={() => onModeChange('nth')}
                                 className={cn(
-                                    'text-[10px] px-2 py-1 rounded border transition-colors',
+                                    'text-[0.625rem] px-2 py-1 rounded border transition-colors',
                                     customMode === 'nth'
                                         ? 'bg-primary text-primary-foreground border-primary'
                                         : 'bg-transparent text-muted-foreground border-border hover:bg-accent'

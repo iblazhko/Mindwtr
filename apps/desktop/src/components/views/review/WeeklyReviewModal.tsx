@@ -773,7 +773,7 @@ export function WeeklyReviewGuideModal({ onClose }: WeeklyReviewGuideModalProps)
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="px-5 py-4 border-b border-border flex items-center justify-between">
-                    <h3 className="text-[15px] font-semibold flex items-center gap-2.5">
+                    <h3 className="text-[0.9375rem] font-semibold flex items-center gap-2.5">
                         <RefreshCw className="w-4 h-4 text-primary" />
                         {t('review.title')}
                     </h3>

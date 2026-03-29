@@ -174,7 +174,7 @@ export function ProjectsSidebar({
                 <div className="flex items-center gap-2 min-w-0">
                     <h2 className="text-xl font-bold tracking-tight">{t('projects.title')}</h2>
                     {areaFilterLabel && (
-                        <span className="text-[10px] uppercase tracking-wide bg-muted/40 text-muted-foreground border border-border/60 rounded-full px-2 py-0.5 truncate max-w-[180px]">
+                        <span className="text-[0.625rem] uppercase tracking-wide bg-muted/40 text-muted-foreground border border-border/60 rounded-full px-2 py-0.5 truncate max-w-[180px]">
                             {t('projects.areaLabel')}: {areaFilterLabel}
                         </span>
                     )}
@@ -272,7 +272,7 @@ export function ProjectsSidebar({
                                                     style={{ backgroundColor: area.color }}
                                                 />
                                             )}
-                                            {area?.icon && <span className="text-[10px]">{area.icon}</span>}
+                                            {area?.icon && <span className="text-[0.625rem]">{area.icon}</span>}
                                             {areaLabel}
                                         </span>
                                         {isCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -340,7 +340,7 @@ export function ProjectsSidebar({
                                                                 </button>
                                                                 <Folder className="w-4 h-4" style={{ color: getProjectColor(project) }} />
                                                                 <span className="flex-1 truncate font-medium">{project.title}</span>
-                                                                <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-muted/60 text-muted-foreground min-w-5 text-center">
+                                                                <span className="text-[0.625rem] px-1.5 py-0.5 rounded-full bg-muted/60 text-muted-foreground min-w-5 text-center">
                                                                     {projTasks.length}
                                                                 </span>
                                                             </div>
@@ -407,7 +407,7 @@ export function ProjectsSidebar({
                                                                 style={{ backgroundColor: area.color }}
                                                             />
                                                         )}
-                                                        {area?.icon && <span className="text-[10px]">{area.icon}</span>}
+                                                        {area?.icon && <span className="text-[0.625rem]">{area.icon}</span>}
                                                         {areaLabel}
                                                     </span>
                                                     {isCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -444,7 +444,7 @@ export function ProjectsSidebar({
                                                                             </span>
                                                                             <Folder className="w-4 h-4" style={{ color: getProjectColor(project) }} />
                                                                             <span className="flex-1 truncate font-medium">{project.title}</span>
-                                                                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-muted/60 text-muted-foreground uppercase">
+                                                                            <span className="text-[0.625rem] px-2 py-0.5 rounded-full bg-muted/60 text-muted-foreground uppercase">
                                                                                 {t(`status.${project.status}`) || project.status}
                                                                             </span>
                                                                         </div>

@@ -87,7 +87,7 @@ export function ProjectDetailsHeader({
                         {project.tagIds && project.tagIds.length > 0 && (
                             <div className="flex flex-wrap gap-1">
                                 {project.tagIds.map((tag) => (
-                                    <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full border border-border/60 bg-muted/20 text-muted-foreground">
+                                    <span key={tag} className="text-[0.625rem] px-2 py-0.5 rounded-full border border-border/60 bg-muted/20 text-muted-foreground">
                                         {tag}
                                     </span>
                                 ))}

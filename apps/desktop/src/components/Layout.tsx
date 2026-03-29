@@ -346,7 +346,7 @@ export function Layout({ children, currentView, onViewChange }: LayoutProps) {
                         {navSections.map((section) => (
                             <div key={section.label} className="space-y-0.5">
                                 {!isCollapsed && (
-                                    <div className="px-3 pt-2 pb-1 text-[11px] font-medium text-muted-foreground uppercase tracking-wider">
+                                    <div className="px-3 pt-2 pb-1 text-[0.6875rem] font-medium text-muted-foreground uppercase tracking-wider">
                                         {section.label}
                                     </div>
                                 )}
@@ -421,7 +421,7 @@ export function Layout({ children, currentView, onViewChange }: LayoutProps) {
                             </span>
                             {!isCollapsed && (
                                 <span
-                                    className="inline-flex items-center gap-2 text-[11px]"
+                                    className="inline-flex items-center gap-2 text-[0.6875rem]"
                                     role="status"
                                     aria-live="polite"
                                     aria-label={syncTooltip}

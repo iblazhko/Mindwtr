@@ -61,7 +61,7 @@ export function SettingsSidebar({ title, subtitle, items, activeId, onSelect, se
                             key={item.id}
                             onClick={() => onSelect(item.id)}
                             className={cn(
-                                "w-full flex items-start gap-2.5 px-3 py-2 rounded-lg text-left text-[13px] font-medium transition-colors",
+                                "w-full flex items-start gap-2.5 px-3 py-2 rounded-lg text-left text-[0.8125rem] font-medium transition-colors",
                                 isActive
                                     ? "bg-primary/10 text-primary"
                                     : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
@@ -82,7 +82,7 @@ export function SettingsSidebar({ title, subtitle, items, activeId, onSelect, se
                                     )}
                                 </div>
                                 {matchedKeywords.length > 0 && (
-                                    <div className="text-[11px] font-normal text-muted-foreground truncate mt-0.5">
+                                    <div className="text-[0.6875rem] font-normal text-muted-foreground truncate mt-0.5">
                                         {matchedKeywords.slice(0, 3).join(' · ')}
                                     </div>
                                 )}

@@ -403,7 +403,7 @@ export function TaskItemDisplay({
                     {!selectionMode && !readOnly && showHoverHint && (
                         <span
                             className={cn(
-                                "pointer-events-none absolute right-2 top-1 text-[10px] text-muted-foreground/70 opacity-0 transition-opacity group-hover/content:opacity-100",
+                                "pointer-events-none absolute right-2 top-1 text-[0.625rem] text-muted-foreground/70 opacity-0 transition-opacity group-hover/content:opacity-100",
                                 isRtl && "left-2 right-auto"
                             )}
                         >
@@ -700,7 +700,7 @@ export function TaskItemDisplay({
                                     value={task.status}
                                     aria-label={t('task.aria.status')}
                                     onChange={(e) => onStatusChange(e.target.value as TaskStatus)}
-                                    className="text-[11px] font-medium px-2.5 py-0.5 rounded-full cursor-pointer appearance-none bg-primary/10 text-primary border-none hover:bg-primary/15 focus:outline-none focus:ring-2 focus:ring-primary/40"
+                                    className="text-[0.6875rem] font-medium px-2.5 py-0.5 rounded-full cursor-pointer appearance-none bg-primary/10 text-primary border-none hover:bg-primary/15 focus:outline-none focus:ring-2 focus:ring-primary/40"
                                 >
                                     <option value="inbox">{t('status.inbox')}</option>
                                     <option value="next">{t('status.next')}</option>

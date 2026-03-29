@@ -452,7 +452,7 @@ export function GlobalSearch({ onNavigate }: GlobalSearchProps) {
                 {filtersOpen && (
                     <div className="px-4 py-3 border-b space-y-3 text-xs">
                         <div className="space-y-2">
-                            <div className="text-[11px] uppercase tracking-wide text-muted-foreground/80">State</div>
+                            <div className="text-[0.6875rem] uppercase tracking-wide text-muted-foreground/80">State</div>
                             <div className="flex flex-wrap gap-2">
                                 {(['inbox', 'next', 'waiting', 'someday', 'reference', 'done', 'archived'] as TaskStatus[]).map((status) => (
                                     <button
@@ -472,7 +472,7 @@ export function GlobalSearch({ onNavigate }: GlobalSearchProps) {
                             </div>
                         </div>
                         <div className="space-y-2">
-                            <div className="text-[11px] uppercase tracking-wide text-muted-foreground/80">Scope</div>
+                            <div className="text-[0.6875rem] uppercase tracking-wide text-muted-foreground/80">Scope</div>
                             <div className="flex flex-wrap gap-2">
                                 {[
                                     { id: 'all', label: 'All' },
@@ -498,7 +498,7 @@ export function GlobalSearch({ onNavigate }: GlobalSearchProps) {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             <div className="space-y-2">
-                                <div className="text-[11px] uppercase tracking-wide text-muted-foreground/80">Area</div>
+                                <div className="text-[0.6875rem] uppercase tracking-wide text-muted-foreground/80">Area</div>
                                 <select
                                     value={selectedArea}
                                     onChange={(event) => setSelectedArea(event.target.value)}
@@ -512,7 +512,7 @@ export function GlobalSearch({ onNavigate }: GlobalSearchProps) {
                                 </select>
                             </div>
                             <div className="space-y-2">
-                                <div className="text-[11px] uppercase tracking-wide text-muted-foreground/80">Due</div>
+                                <div className="text-[0.6875rem] uppercase tracking-wide text-muted-foreground/80">Due</div>
                                 <select
                                     value={duePreset}
                                     onChange={(event) => setDuePreset(event.target.value as DuePreset)}
@@ -529,7 +529,7 @@ export function GlobalSearch({ onNavigate }: GlobalSearchProps) {
                             </div>
                         </div>
                         <div className="space-y-2">
-                            <div className="text-[11px] uppercase tracking-wide text-muted-foreground/80">Contexts & Tags</div>
+                            <div className="text-[0.6875rem] uppercase tracking-wide text-muted-foreground/80">Contexts & Tags</div>
                             <div className="flex flex-wrap gap-2 max-h-20 overflow-y-auto">
                                 {allTokens.map((token) => (
                                     <button

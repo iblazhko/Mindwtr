@@ -95,11 +95,11 @@ type SettingsMainPageProps = {
 };
 
 const selectCls =
-    "text-[13px] bg-muted/50 text-foreground border border-border rounded-md px-2.5 py-1.5 hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary/40";
+    "text-[0.8125rem] bg-muted/50 text-foreground border border-border rounded-md px-2.5 py-1.5 hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary/40";
 
 function SectionHeader({ children }: { children: React.ReactNode }) {
     return (
-        <h3 className="text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
+        <h3 className="text-[0.6875rem] font-semibold tracking-widest text-muted-foreground uppercase">
             {children}
         </h3>
     );
@@ -109,7 +109,7 @@ function SettingsRow({ title, description, children }: { title: string; descript
     return (
         <div className="px-4 py-3 flex items-center justify-between gap-6">
             <div className="min-w-0">
-                <div className="text-[13px] font-medium">{title}</div>
+                <div className="text-[0.8125rem] font-medium">{title}</div>
                 {description && <div className="text-xs text-muted-foreground mt-0.5">{description}</div>}
             </div>
             <div className="flex items-center gap-2 shrink-0">{children}</div>

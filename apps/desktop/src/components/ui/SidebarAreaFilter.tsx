@@ -94,7 +94,7 @@ export function SidebarAreaFilter({
                         closeDropdown();
                     }
                 }}
-                className="w-full flex items-center justify-between text-[13px] bg-muted/40 border-none rounded-lg px-3 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+                className="w-full flex items-center justify-between text-[0.8125rem] bg-muted/40 border-none rounded-lg px-3 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
                 aria-haspopup="listbox"
                 aria-expanded={open}
                 aria-label={ariaLabel}

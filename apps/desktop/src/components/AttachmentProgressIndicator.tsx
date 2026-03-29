@@ -24,7 +24,7 @@ export function AttachmentProgressIndicator({ attachmentId, className }: Attachm
     const percentage = total > 0 ? Math.min(100, Math.round((progress.bytesTransferred / total) * 100)) : null;
 
     return (
-        <div className={cn("flex items-center gap-2 text-[10px] text-muted-foreground", className)}>
+        <div className={cn("flex items-center gap-2 text-[0.625rem] text-muted-foreground", className)}>
             <div
                 className="h-1 w-16 overflow-hidden rounded-full bg-muted"
                 role="progressbar"

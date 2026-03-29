@@ -46,7 +46,7 @@ export function WeekdaySelector({ value, onChange, className }: WeekdaySelectorP
                         type="button"
                         onClick={() => handleToggle(day.id)}
                         className={cn(
-                            "text-[10px] px-2 py-1 rounded border transition-colors",
+                            "text-[0.625rem] px-2 py-1 rounded border transition-colors",
                             isActive
                                 ? "bg-primary text-primary-foreground border-primary"
                                 : "bg-transparent text-muted-foreground border-border hover:bg-accent"

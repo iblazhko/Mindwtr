@@ -130,8 +130,8 @@ export function InboxProcessingQuickPanel({
         <div className="bg-card border border-border rounded-xl animate-in fade-in overflow-hidden">
             <div className="flex items-center justify-between gap-3 px-5 py-3.5">
                 <div className="flex items-center gap-2.5 min-w-0">
-                    <h3 className="font-semibold text-[15px] truncate">📋 {t('process.title')}</h3>
-                    <span className="text-[11px] font-medium text-primary bg-primary/10 px-2.5 py-0.5 rounded-full shrink-0">
+                    <h3 className="font-semibold text-[0.9375rem] truncate">📋 {t('process.title')}</h3>
+                    <span className="text-[0.6875rem] font-medium text-primary bg-primary/10 px-2.5 py-0.5 rounded-full shrink-0">
                         {remainingCount} {t('process.remaining')}
                     </span>
                 </div>
@@ -193,7 +193,7 @@ export function InboxProcessingQuickPanel({
 
                 <div className="space-y-3">
                     <div className="space-y-1">
-                        <label className="text-[11px] text-muted-foreground font-medium">{t('taskEdit.titleLabel')}</label>
+                        <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('taskEdit.titleLabel')}</label>
                         <input
                             aria-label={t('taskEdit.titleLabel')}
                             value={processingTitle}
@@ -202,7 +202,7 @@ export function InboxProcessingQuickPanel({
                         />
                     </div>
                     <div className="space-y-1">
-                        <label className="text-[11px] text-muted-foreground font-medium">{t('taskEdit.descriptionLabel')}</label>
+                        <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('taskEdit.descriptionLabel')}</label>
                         <textarea
                             aria-label={t('taskEdit.descriptionLabel')}
                             value={processingDescription}
@@ -316,7 +316,7 @@ export function InboxProcessingQuickPanel({
                     <>
                         {showScheduleFields ? (
                             <div className="space-y-2">
-                                <label className="text-[11px] text-muted-foreground font-medium">{t('taskEdit.startDateLabel')}</label>
+                                <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('taskEdit.startDateLabel')}</label>
                                 <div className="flex items-center gap-2">
                                     <input
                                         type="date"
@@ -378,7 +378,7 @@ export function InboxProcessingQuickPanel({
                 {showDelegationFields ? (
                     <div className="space-y-3">
                         <div className="space-y-1">
-                            <label className="text-[11px] text-muted-foreground font-medium">{t('process.delegateWhoLabel')}</label>
+                            <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('process.delegateWhoLabel')}</label>
                             <input
                                 aria-label={t('process.delegateWhoLabel')}
                                 value={delegateWho}
@@ -388,7 +388,7 @@ export function InboxProcessingQuickPanel({
                             />
                         </div>
                         <div className="space-y-1">
-                            <label className="text-[11px] text-muted-foreground font-medium">{t('process.delegateFollowUpLabel')}</label>
+                            <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('process.delegateFollowUpLabel')}</label>
                             <input
                                 type="date"
                                 aria-label={t('process.delegateFollowUpLabel')}
@@ -433,7 +433,7 @@ export function InboxProcessingQuickPanel({
                         {convertToProject ? (
                             <div className="space-y-3">
                                 <div className="space-y-1">
-                                    <label className="text-[11px] text-muted-foreground font-medium">{t('projects.title')}</label>
+                                    <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('projects.title')}</label>
                                     <input
                                         aria-label={t('projects.title')}
                                         value={projectTitleDraft}
@@ -442,7 +442,7 @@ export function InboxProcessingQuickPanel({
                                     />
                                 </div>
                                 <div className="space-y-1">
-                                    <label className="text-[11px] text-muted-foreground font-medium">{t('process.nextAction')}</label>
+                                    <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('process.nextAction')}</label>
                                     <input
                                         aria-label={t('process.nextAction')}
                                         value={nextActionDraft}
@@ -455,7 +455,7 @@ export function InboxProcessingQuickPanel({
                         ) : (
                             <div className="space-y-3">
                                 <div className="space-y-1">
-                                    <label className="text-[11px] text-muted-foreground font-medium">{t('taskEdit.projectLabel')}</label>
+                                    <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('taskEdit.projectLabel')}</label>
                                     <ProjectSelector
                                         projects={projects}
                                         value={selectedProjectId ?? ''}
@@ -479,7 +479,7 @@ export function InboxProcessingQuickPanel({
                                 </div>
                                 {!selectedProjectId ? (
                                     <div className="space-y-1">
-                                        <label className="text-[11px] text-muted-foreground font-medium">{t('taskEdit.areaLabel')}</label>
+                                        <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('taskEdit.areaLabel')}</label>
                                         <select
                                             aria-label={t('taskEdit.areaLabel')}
                                             value={selectedAreaId ?? ''}
@@ -500,7 +500,7 @@ export function InboxProcessingQuickPanel({
 
                         <div className="grid gap-3 md:grid-cols-2">
                             <div className="space-y-2">
-                                <label className="text-[11px] text-muted-foreground font-medium">{t('taskEdit.contextsLabel')}</label>
+                                <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('taskEdit.contextsLabel')}</label>
                                 <input
                                     aria-label={t('taskEdit.contextsLabel')}
                                     value={selectedContexts.join(', ')}
@@ -529,7 +529,7 @@ export function InboxProcessingQuickPanel({
                                 ) : null}
                             </div>
                             <div className="space-y-2">
-                                <label className="text-[11px] text-muted-foreground font-medium">{t('taskEdit.tagsLabel')}</label>
+                                <label className="text-[0.6875rem] text-muted-foreground font-medium">{t('taskEdit.tagsLabel')}</label>
                                 <input
                                     aria-label={t('taskEdit.tagsLabel')}
                                     value={selectedTags.join(', ')}

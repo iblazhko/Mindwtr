@@ -62,7 +62,7 @@ export function ProjectDetailsFields({
             <section className="py-5 border-b border-border/50">
                 <div className="grid grid-cols-1 gap-3 md:grid-cols-2 2xl:grid-cols-12">
                     <div className="space-y-2 min-w-0 2xl:col-span-2">
-                        <label className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider flex items-center gap-1.5 truncate">
+                        <label className="text-[0.625rem] text-muted-foreground font-medium uppercase tracking-wider flex items-center gap-1.5 truncate">
                             <Signal className="h-3.5 w-3.5" />
                             {t('projects.statusLabel')}
                         </label>
@@ -79,7 +79,7 @@ export function ProjectDetailsFields({
                     </div>
 
                     <div className="space-y-2 min-w-0 2xl:col-span-2">
-                        <label className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider flex items-center gap-1.5 truncate">
+                        <label className="text-[0.625rem] text-muted-foreground font-medium uppercase tracking-wider flex items-center gap-1.5 truncate">
                             <ListOrdered className="h-3.5 w-3.5" />
                             {resolvedSequenceModeLabel}
                         </label>
@@ -101,7 +101,7 @@ export function ProjectDetailsFields({
                     </div>
 
                     <div className="space-y-2 min-w-0 md:col-span-2 2xl:col-span-4">
-                        <label className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider flex items-center gap-1.5 truncate">
+                        <label className="text-[0.625rem] text-muted-foreground font-medium uppercase tracking-wider flex items-center gap-1.5 truncate">
                             <FolderOpenDot className="h-3.5 w-3.5" />
                             {t('projects.areaLabel')}
                         </label>
@@ -141,7 +141,7 @@ export function ProjectDetailsFields({
                     </div>
 
                     <div className="space-y-2 min-w-0 md:col-span-2 2xl:col-span-2">
-                        <label className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider flex items-center gap-1.5 truncate">
+                        <label className="text-[0.625rem] text-muted-foreground font-medium uppercase tracking-wider flex items-center gap-1.5 truncate">
                             <Tags className="h-3.5 w-3.5" />
                             {t('taskEdit.tagsLabel')}
                         </label>
@@ -164,7 +164,7 @@ export function ProjectDetailsFields({
                     </div>
 
                     <div className="space-y-2 min-w-0 2xl:col-span-2">
-                        <label className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider flex items-center gap-1.5 truncate">
+                        <label className="text-[0.625rem] text-muted-foreground font-medium uppercase tracking-wider flex items-center gap-1.5 truncate">
                             <CalendarClock className="h-3.5 w-3.5" />
                             {t('projects.reviewAt')}
                         </label>

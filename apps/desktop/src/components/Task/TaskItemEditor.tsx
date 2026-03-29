@@ -407,12 +407,12 @@ export function TaskItemEditor({
                         <span className="flex items-center gap-2">
                             {t('taskEdit.scheduling')}
                             {sectionCounts.scheduling > 0 && (
-                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                                <span className="text-[0.625rem] px-2 py-0.5 rounded-full bg-primary/10 text-primary">
                                     {sectionCounts.scheduling}
                                 </span>
                             )}
                         </span>
-                        <span className="text-[10px]">{schedulingOpen ? '▾' : '▸'}</span>
+                        <span className="text-[0.625rem]">{schedulingOpen ? '▾' : '▸'}</span>
                     </button>
                     {schedulingOpen && (
                         <div className="mt-3 space-y-3">
@@ -438,12 +438,12 @@ export function TaskItemEditor({
                         <span className="flex items-center gap-2">
                             {t('taskEdit.organization')}
                             {sectionCounts.organization > 0 && (
-                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                                <span className="text-[0.625rem] px-2 py-0.5 rounded-full bg-primary/10 text-primary">
                                     {sectionCounts.organization}
                                 </span>
                             )}
                         </span>
-                        <span className="text-[10px]">{organizationOpen ? '▾' : '▸'}</span>
+                        <span className="text-[0.625rem]">{organizationOpen ? '▾' : '▸'}</span>
                     </button>
                     {organizationOpen && (
                         <div className="mt-3 space-y-3">
@@ -469,12 +469,12 @@ export function TaskItemEditor({
                         <span className="flex items-center gap-2">
                             {t('taskEdit.details')}
                             {sectionCounts.details > 0 && (
-                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                                <span className="text-[0.625rem] px-2 py-0.5 rounded-full bg-primary/10 text-primary">
                                     {sectionCounts.details}
                                 </span>
                             )}
                         </span>
-                        <span className="text-[10px]">{detailsOpen ? '▾' : '▸'}</span>
+                        <span className="text-[0.625rem]">{detailsOpen ? '▾' : '▸'}</span>
                     </button>
                     {detailsOpen && (
                         <div className="mt-3 space-y-3">

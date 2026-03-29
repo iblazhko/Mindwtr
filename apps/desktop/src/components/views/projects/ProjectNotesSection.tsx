@@ -138,7 +138,7 @@ export function ProjectNotesSection({
                                             <button
                                                 type="button"
                                                 onClick={() => onRemoveAttachment(attachment.id)}
-                                                className="text-muted-foreground hover:text-foreground text-[11px]"
+                                                className="text-muted-foreground hover:text-foreground text-[0.6875rem]"
                                             >
                                                 {t('attachments.remove')}
                                             </button>

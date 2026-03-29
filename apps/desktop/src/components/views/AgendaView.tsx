@@ -591,7 +591,7 @@ export function AgendaView() {
                             <div className="flex items-center gap-2">
                                 <Folder className="w-4 h-4" style={{ color: project.color }} />
                                 <span className="text-sm font-medium text-foreground">{project.title}</span>
-                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
+                                <span className="text-[0.625rem] px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
                                     {t(`status.${project.status}`)}
                                 </span>
                             </div>

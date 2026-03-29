@@ -1,6 +1,9 @@
+import { useMemo } from 'react';
 import { StyleSheet } from 'react-native';
+import { useFontScale } from '@/contexts/font-scale-context';
 
-export const projectsScreenStyles = StyleSheet.create({
+export const makeStyles = (scale: number) => StyleSheet.create({
+
     container: {
         flex: 1,
         backgroundColor: '#fff',
@@ -20,11 +23,11 @@ export const projectsScreenStyles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     filterToggleText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     tagFilterLabel: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     tagFilterChips: {
@@ -39,7 +42,7 @@ export const projectsScreenStyles = StyleSheet.create({
         borderWidth: 1,
     },
     tagFilterText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     input: {
@@ -48,7 +51,7 @@ export const projectsScreenStyles = StyleSheet.create({
         borderRadius: 8,
         paddingHorizontal: 12,
         paddingVertical: 8,
-        fontSize: 16,
+        fontSize: 16 * scale,
     },
     colorPicker: {
         flexDirection: 'row',
@@ -74,7 +77,7 @@ export const projectsScreenStyles = StyleSheet.create({
     },
     addButtonText: {
         color: '#fff',
-        fontSize: 15,
+        fontSize: 15 * scale,
         fontWeight: '600',
     },
     projectItem: {
@@ -122,12 +125,12 @@ export const projectsScreenStyles = StyleSheet.create({
         opacity: 0.7,
     },
     projectTitle: {
-        fontSize: 16,
+        fontSize: 16 * scale,
         fontWeight: '500',
         marginBottom: 4,
     },
     projectMeta: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         color: '#666',
     },
     deleteButton: {
@@ -142,7 +145,7 @@ export const projectsScreenStyles = StyleSheet.create({
     },
     emptyText: {
         color: '#999',
-        fontSize: 16,
+        fontSize: 16 * scale,
     },
     modalHeader: {
         flexDirection: 'row',
@@ -157,11 +160,11 @@ export const projectsScreenStyles = StyleSheet.create({
         width: 60,
     },
     backButtonText: {
-        fontSize: 16,
+        fontSize: 16 * scale,
         color: '#007AFF',
     },
     modalTitle: {
-        fontSize: 18,
+        fontSize: 18 * scale,
         fontWeight: 'bold',
     },
     sequentialBadge: {
@@ -171,7 +174,7 @@ export const projectsScreenStyles = StyleSheet.create({
         borderRadius: 4,
     },
     sequentialBadgeText: {
-        fontSize: 10,
+        fontSize: 10 * scale,
         color: '#1D4ED8',
         fontWeight: '500',
     },
@@ -185,7 +188,7 @@ export const projectsScreenStyles = StyleSheet.create({
         backgroundColor: '#3B82F6',
     },
     sequentialToggleText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
         color: '#6B7280',
     },
@@ -203,7 +206,7 @@ export const projectsScreenStyles = StyleSheet.create({
         gap: 8,
     },
     statusLabel: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     statusPicker: {
@@ -216,7 +219,7 @@ export const projectsScreenStyles = StyleSheet.create({
         borderWidth: 1,
     },
     statusPickerText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     statusMenu: {
@@ -234,7 +237,7 @@ export const projectsScreenStyles = StyleSheet.create({
         paddingVertical: 8,
     },
     statusMenuText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     statusDot: {
@@ -249,7 +252,7 @@ export const projectsScreenStyles = StyleSheet.create({
         marginRight: 8,
     },
     statusButtonText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     completeButton: {
@@ -294,14 +297,14 @@ export const projectsScreenStyles = StyleSheet.create({
         alignItems: 'center',
     },
     detailsToggleText: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '600',
     },
     notesHeader: {
         paddingVertical: 8,
     },
     notesTitle: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '600',
     },
     notesInput: {
@@ -310,7 +313,7 @@ export const projectsScreenStyles = StyleSheet.create({
         padding: 10,
         minHeight: 100,
         textAlignVertical: 'top',
-        fontSize: 14,
+        fontSize: 14 * scale,
         borderWidth: 1,
     },
     smallButton: {
@@ -320,7 +323,7 @@ export const projectsScreenStyles = StyleSheet.create({
         borderWidth: 1,
     },
     smallButtonText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '700',
     },
     markdownPreview: {
@@ -341,7 +344,7 @@ export const projectsScreenStyles = StyleSheet.create({
         gap: 12,
     },
     attachmentsTitle: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '700',
     },
     attachmentsActions: {
@@ -351,7 +354,7 @@ export const projectsScreenStyles = StyleSheet.create({
     },
     helperText: {
         marginTop: 8,
-        fontSize: 13,
+        fontSize: 13 * scale,
     },
     attachmentsList: {
         marginTop: 10,
@@ -371,21 +374,21 @@ export const projectsScreenStyles = StyleSheet.create({
         paddingRight: 10,
     },
     attachmentTitle: {
-        fontSize: 13,
+        fontSize: 13 * scale,
         fontWeight: '600',
     },
     attachmentDownload: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
         marginRight: 10,
     },
     attachmentStatus: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '500',
         marginRight: 10,
     },
     attachmentRemove: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '700',
     },
     overlay: {
@@ -403,7 +406,7 @@ export const projectsScreenStyles = StyleSheet.create({
         borderWidth: 1,
     },
     linkModalTitle: {
-        fontSize: 16,
+        fontSize: 16 * scale,
         fontWeight: '700',
         marginBottom: 12,
     },
@@ -412,10 +415,10 @@ export const projectsScreenStyles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 12,
         paddingVertical: 10,
-        fontSize: 16,
+        fontSize: 16 * scale,
     },
     linkModalHint: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         marginTop: 8,
     },
     linkModalButtons: {
@@ -442,7 +445,7 @@ export const projectsScreenStyles = StyleSheet.create({
     },
     previewTitle: {
         flex: 1,
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '700',
     },
     previewImage: {
@@ -471,7 +474,7 @@ export const projectsScreenStyles = StyleSheet.create({
         borderWidth: 1,
     },
     areaSortText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     areaManagerRow: {
@@ -502,7 +505,7 @@ export const projectsScreenStyles = StyleSheet.create({
         gap: 8,
     },
     areaManagerText: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '600',
     },
     areaOrderButtons: {
@@ -527,7 +530,7 @@ export const projectsScreenStyles = StyleSheet.create({
         opacity: 0.5,
     },
     areaOrderText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '700',
     },
     areaDeleteButton: {
@@ -538,7 +541,7 @@ export const projectsScreenStyles = StyleSheet.create({
         opacity: 0.6,
     },
     areaDeleteText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '700',
     },
     pickerCard: {
@@ -556,7 +559,7 @@ export const projectsScreenStyles = StyleSheet.create({
         borderBottomWidth: 1,
     },
     pickerRowText: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '600',
     },
     areaDot: {
@@ -575,7 +578,7 @@ export const projectsScreenStyles = StyleSheet.create({
     tagInput: {
         flex: 1,
         paddingVertical: 8,
-        fontSize: 14,
+        fontSize: 14 * scale,
     },
     tagAddButton: {
         borderLeftWidth: 1,
@@ -583,7 +586,7 @@ export const projectsScreenStyles = StyleSheet.create({
         paddingVertical: 8,
     },
     tagAddButtonText: {
-        fontSize: 16,
+        fontSize: 16 * scale,
         fontWeight: '700',
     },
     tagOptions: {
@@ -599,7 +602,7 @@ export const projectsScreenStyles = StyleSheet.create({
         borderWidth: 1,
     },
     tagOptionText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     linkModalButton: {
@@ -608,7 +611,7 @@ export const projectsScreenStyles = StyleSheet.create({
         borderRadius: 10,
     },
     linkModalButtonText: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '700',
     },
     linkModalButtonDisabled: {
@@ -620,7 +623,7 @@ export const projectsScreenStyles = StyleSheet.create({
         paddingVertical: 12,
     },
     reviewLabel: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '600',
         marginBottom: 6,
     },
@@ -638,13 +641,18 @@ export const projectsScreenStyles = StyleSheet.create({
         backgroundColor: '#e5e5e5',
     },
     clearReviewText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     focusButton: {
         padding: 8,
     },
     focusIcon: {
-        fontSize: 18,
+        fontSize: 18 * scale,
     },
 });
+
+export const useStyles = () => {
+    const scale = useFontScale();
+    return useMemo(() => makeStyles(scale), [scale]);
+};

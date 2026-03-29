@@ -3,7 +3,7 @@ import { Image, Modal, Pressable, Text, TextInput, TouchableOpacity, View } from
 
 import type { Attachment } from '@mindwtr/core';
 
-import { styles } from './task-edit-modal.styles';
+import { useStyles } from './task-edit-modal.styles';
 
 type ThemeColors = {
     cardBg: string;
@@ -39,7 +39,9 @@ export const TaskEditLinkModal = ({
     onBlurLinkInput,
     onClose,
     onSave,
-}: TaskEditLinkModalProps) => (
+}: TaskEditLinkModalProps) => {
+    const styles = useStyles();
+    return (
     <Modal
         visible={visible}
         transparent
@@ -87,7 +89,8 @@ export const TaskEditLinkModal = ({
             </View>
         </View>
     </Modal>
-);
+    );
+};
 
 type AudioStatusLike = {
     isLoaded?: boolean;
@@ -124,7 +127,9 @@ export const TaskEditAudioModal = ({
     audioLoading,
     onTogglePlayback,
     onClose,
-}: TaskEditAudioModalProps) => (
+}: TaskEditAudioModalProps) => {
+    const styles = useStyles();
+    return (
     <Modal
         visible={visible}
         transparent
@@ -161,7 +166,8 @@ export const TaskEditAudioModal = ({
             </Pressable>
         </Pressable>
     </Modal>
-);
+    );
+};
 
 type TaskEditImagePreviewModalProps = {
     visible: boolean;
@@ -177,7 +183,9 @@ export const TaskEditImagePreviewModal = ({
     tc,
     imagePreviewAttachment,
     onClose,
-}: TaskEditImagePreviewModalProps) => (
+}: TaskEditImagePreviewModalProps) => {
+    const styles = useStyles();
+    return (
     <Modal
         visible={visible}
         transparent
@@ -212,4 +220,5 @@ export const TaskEditImagePreviewModal = ({
             </Pressable>
         </Pressable>
     </Modal>
-);
+    );
+};

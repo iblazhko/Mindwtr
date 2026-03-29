@@ -14,7 +14,7 @@ import { GtdSettingsScreen } from '@/components/settings/gtd-settings-screen';
 import { ManageSettingsScreen } from '@/components/settings/manage-settings-screen';
 import { NotificationsSettingsScreen } from '@/components/settings/notifications-settings-screen';
 import { MenuItem, SettingsTopBar, SubHeader } from '@/components/settings/settings.shell';
-import { styles } from '@/components/settings/settings.styles';
+import { useStyles } from '@/components/settings/settings.styles';
 import {
     SETTINGS_SCREEN_SET,
     type SettingsScreen,
@@ -24,6 +24,7 @@ import { useSettingsLocalization, useSettingsScrollContent } from '@/components/
 import { SyncSettingsScreen } from '@/components/settings/sync-settings-screen';
 
 export default function SettingsPage() {
+    const styles = useStyles();
     const router = useRouter();
     const tc = useThemeColors();
     const { t } = useSettingsLocalization();

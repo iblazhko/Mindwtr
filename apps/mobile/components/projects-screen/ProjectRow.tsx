@@ -3,7 +3,7 @@ import { Alert, Text, TouchableOpacity, View } from 'react-native';
 import { type Area, type Project, type Task } from '@mindwtr/core';
 import { Trash2 } from 'lucide-react-native';
 
-import { projectsScreenStyles as styles } from '@/app/(drawer)/projects-screen.styles';
+import { useStyles } from '@/app/(drawer)/projects-screen.styles';
 
 type ThemeColors = {
     cardBg: string;
@@ -46,6 +46,7 @@ export function ProjectRow({
     onOpenProject,
     onToggleProjectFocus,
 }: ProjectRowProps) {
+    const styles = useStyles();
     const projectTasks = tasks.filter((task) => (
         task.projectId === project.id
         && task.status !== 'done'

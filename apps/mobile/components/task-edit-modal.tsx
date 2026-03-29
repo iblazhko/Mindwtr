@@ -30,7 +30,7 @@ import { useLanguage } from '../contexts/language-context';
 import { useThemeColors } from '@/hooks/use-theme-colors';
 import { buildAIConfig, isAIKeyRequired, loadAIKey } from '../lib/ai-config';
 import type { AIResponseAction } from './ai-response-modal';
-import { styles } from './task-edit/task-edit-modal.styles';
+import { useStyles } from './task-edit/task-edit-modal.styles';
 import { TaskEditFieldRenderer } from './task-edit/TaskEditFieldRenderer';
 import { TaskEditViewTab } from './task-edit/TaskEditViewTab';
 import { TaskEditFormTab } from './task-edit/TaskEditFormTab';
@@ -98,6 +98,7 @@ function TaskEditModalInner({
     onContextNavigate,
     onTagNavigate,
 }: TaskEditModalProps) {
+    const styles = useStyles();
     const {
         tasks,
         projects,

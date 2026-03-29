@@ -9,9 +9,10 @@ import { useThemeColors } from '@/hooks/use-theme-colors';
 
 import { useSettingsLocalization, useSettingsScrollContent } from './settings.hooks';
 import { SettingsTopBar, SubHeader } from './settings.shell';
-import { styles } from './settings.styles';
+import { useStyles } from './settings.styles';
 
 export function ManageSettingsScreen() {
+    const styles = useStyles();
     const tc = useThemeColors();
     const { localize, t } = useSettingsLocalization();
     const scrollContentStyle = useSettingsScrollContent();

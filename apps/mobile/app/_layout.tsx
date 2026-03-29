@@ -15,6 +15,7 @@ import { QuickCaptureProvider, type QuickCaptureOptions } from '../contexts/quic
 
 import { ThemeProvider, useTheme } from '../contexts/theme-context';
 import { LanguageProvider, useLanguage } from '../contexts/language-context';
+import { FontScaleProvider } from '../contexts/font-scale-context';
 import {
   configureDateFormatting,
   DEFAULT_PROJECT_COLOR,
@@ -819,9 +820,11 @@ export default function RootLayout() {
     <ShareIntentProvider>
       <ThemeProvider>
         <LanguageProvider>
-          <ErrorBoundary>
-            <RootLayoutContent />
-          </ErrorBoundary>
+          <FontScaleProvider>
+            <ErrorBoundary>
+              <RootLayoutContent />
+            </ErrorBoundary>
+          </FontScaleProvider>
         </LanguageProvider>
       </ThemeProvider>
     </ShareIntentProvider>

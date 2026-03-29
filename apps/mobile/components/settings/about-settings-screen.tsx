@@ -17,13 +17,14 @@ import {
 } from './settings.constants';
 import { useSettingsLocalization, useSettingsScrollContent } from './settings.hooks';
 import { SettingsTopBar, SubHeader } from './settings.shell';
-import { styles } from './settings.styles';
+import { useStyles } from './settings.styles';
 
 export function AboutSettingsScreen({
     onUpdateBadgeChange,
 }: {
     onUpdateBadgeChange: (next: boolean) => void;
 }) {
+    const styles = useStyles();
     const tc = useThemeColors();
     const { localize, t } = useSettingsLocalization();
     const scrollContentStyle = useSettingsScrollContent();

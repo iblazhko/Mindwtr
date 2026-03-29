@@ -10,9 +10,10 @@ import { useThemeColors } from '@/hooks/use-theme-colors';
 import { LANGUAGES } from './settings.constants';
 import { useSettingsLocalization, useSettingsScrollContent } from './settings.hooks';
 import { SettingsTopBar, SubHeader } from './settings.shell';
-import { styles } from './settings.styles';
+import { useStyles } from './settings.styles';
 
 export function GeneralSettingsScreen() {
+    const styles = useStyles();
     const { themeMode, setThemeMode } = useTheme();
     const { language, setLanguage, t } = useSettingsLocalization();
     const { settings, updateSettings } = useTaskStore();

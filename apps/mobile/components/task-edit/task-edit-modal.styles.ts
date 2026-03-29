@@ -1,16 +1,19 @@
+import { useMemo } from 'react';
 import { StyleSheet } from 'react-native';
+import { useFontScale } from '@/contexts/font-scale-context';
 
-export const styles = StyleSheet.create({
+export const makeStyles = (scale: number) => StyleSheet.create({
+
     container: { flex: 1, backgroundColor: '#f2f2f7' },
     saveBtn: { fontWeight: '600' },
     content: { padding: 20, flex: 1 },
     contentContainer: { paddingBottom: 32, flexGrow: 1 },
     formGroup: { marginBottom: 20 },
-    label: { fontSize: 14, color: '#666', marginBottom: 8, textTransform: 'uppercase' },
+    label: { fontSize: 14 * scale, color: '#666', marginBottom: 8, textTransform: 'uppercase' },
     input: {
         padding: 12,
         borderRadius: 10,
-        fontSize: 16,
+        fontSize: 16 * scale,
         borderWidth: 1,
         borderColor: 'transparent',
         backgroundColor: 'transparent',
@@ -33,7 +36,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#e5e5e5',
     },
     clearDateText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         color: '#333',
         fontWeight: '600',
     },
@@ -63,7 +66,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     weekdayButtonText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     statusChip: {
@@ -86,7 +89,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     statusChipActive: { backgroundColor: '#007AFF' },
-    statusText: { fontSize: 14, color: '#333' },
+    statusText: { fontSize: 14 * scale, color: '#333' },
     statusTextActive: { color: '#fff' },
     startBtn: {
         backgroundColor: '#34C759',
@@ -96,7 +99,7 @@ export const styles = StyleSheet.create({
         minHeight: 44,
         justifyContent: 'center',
     },
-    startBtnText: { color: '#fff', fontSize: 14, fontWeight: '600' },
+    startBtnText: { color: '#fff', fontSize: 14 * scale, fontWeight: '600' },
     doneBtn: {
         backgroundColor: '#007AFF',
         paddingHorizontal: 12,
@@ -105,7 +108,7 @@ export const styles = StyleSheet.create({
         minHeight: 44,
         justifyContent: 'center',
     },
-    doneBtnText: { color: '#fff', fontSize: 14, fontWeight: '600' },
+    doneBtnText: { color: '#fff', fontSize: 14 * scale, fontWeight: '600' },
     tokenSuggestionsMenu: {
         marginTop: 8,
         borderRadius: 10,
@@ -122,7 +125,7 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 0,
     },
     tokenSuggestionText: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '500',
     },
     quickTokensRow: {
@@ -140,7 +143,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     quickTokenText: {
-        fontSize: 13,
+        fontSize: 13 * scale,
         fontWeight: '500',
     },
     checklistContainer: {
@@ -180,12 +183,12 @@ export const styles = StyleSheet.create({
     },
     checkmark: {
         color: '#fff',
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: 'bold',
     },
     checklistInput: {
         flex: 1,
-        fontSize: 16,
+        fontSize: 16 * scale,
         padding: 0,
     },
     completedText: {
@@ -200,7 +203,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     deleteBtnText: {
-        fontSize: 20,
+        fontSize: 20 * scale,
         color: '#999',
         fontWeight: '300',
     },
@@ -210,7 +213,7 @@ export const styles = StyleSheet.create({
     },
     addChecklistText: {
         color: '#007AFF',
-        fontSize: 15,
+        fontSize: 15 * scale,
         fontWeight: '500',
     },
     aiRow: {
@@ -225,7 +228,7 @@ export const styles = StyleSheet.create({
         paddingVertical: 8,
     },
     aiButtonText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     aiWorking: {
@@ -235,7 +238,7 @@ export const styles = StyleSheet.create({
         paddingLeft: 4,
     },
     aiWorkingText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '500',
     },
     emptySectionHint: {
@@ -245,7 +248,7 @@ export const styles = StyleSheet.create({
         paddingVertical: 10,
     },
     emptySectionHintText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '500',
     },
     copilotPill: {
@@ -256,11 +259,11 @@ export const styles = StyleSheet.create({
         marginBottom: 12,
     },
     copilotText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     copilotHint: {
-        fontSize: 11,
+        fontSize: 11 * scale,
         marginTop: 2,
     },
     pickerToolbar: {
@@ -280,7 +283,7 @@ export const styles = StyleSheet.create({
     },
     pickerDoneText: {
         color: '#fff',
-        fontSize: 13,
+        fontSize: 13 * scale,
         fontWeight: '600',
     },
     checklistActions: {
@@ -299,7 +302,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     checklistActionText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '500',
     },
     inlineHeader: {
@@ -309,7 +312,7 @@ export const styles = StyleSheet.create({
         marginBottom: 8,
     },
     inlineAction: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '700',
     },
     inlineActions: {
@@ -328,7 +331,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     smallButtonText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     markdownPreview: {
@@ -349,14 +352,14 @@ export const styles = StyleSheet.create({
         marginBottom: 12,
     },
     viewLabel: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '700',
         textTransform: 'uppercase',
         letterSpacing: 0.4,
         flex: 1,
     },
     viewValue: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '600',
         flex: 1,
         textAlign: 'right',
@@ -387,7 +390,7 @@ export const styles = StyleSheet.create({
         paddingVertical: 6,
     },
     viewPillText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     viewCard: {
@@ -407,13 +410,13 @@ export const styles = StyleSheet.create({
         paddingVertical: 6,
     },
     viewChecklistMarker: {
-        fontSize: 20,
+        fontSize: 20 * scale,
         width: 26,
         height: 26,
         textAlign: 'center',
     },
     viewChecklistText: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         flex: 1,
     },
     viewAttachmentGrid: {
@@ -438,12 +441,12 @@ export const styles = StyleSheet.create({
         resizeMode: 'cover',
     },
     viewAttachmentText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
         textAlign: 'center',
     },
     viewAttachmentSubtext: {
-        fontSize: 11,
+        fontSize: 11 * scale,
         marginTop: 6,
         textAlign: 'center',
     },
@@ -455,11 +458,11 @@ export const styles = StyleSheet.create({
         marginTop: 4,
     },
     moreOptionsText: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '700',
     },
     helperText: {
-        fontSize: 13,
+        fontSize: 13 * scale,
         marginTop: 6,
     },
     attachmentsList: {
@@ -482,21 +485,21 @@ export const styles = StyleSheet.create({
         paddingRight: 10,
     },
     attachmentTitle: {
-        fontSize: 13,
+        fontSize: 13 * scale,
         fontWeight: '600',
     },
     attachmentDownload: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
         marginRight: 10,
     },
     attachmentStatus: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '500',
         marginRight: 10,
     },
     attachmentRemove: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     overlay: {
@@ -531,7 +534,7 @@ export const styles = StyleSheet.create({
     },
     previewTitle: {
         flex: 1,
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '600',
         marginRight: 8,
     },
@@ -548,17 +551,17 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
     },
     modalTitle: {
-        fontSize: 16,
+        fontSize: 16 * scale,
         fontWeight: '700',
         marginBottom: 12,
     },
     modalLabel: {
-        fontSize: 13,
+        fontSize: 13 * scale,
         fontWeight: '600',
     },
     validationText: {
         marginTop: 8,
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     modalInput: {
@@ -566,7 +569,7 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 12,
         paddingVertical: 10,
-        fontSize: 16,
+        fontSize: 16 * scale,
     },
     customRow: {
         flexDirection: 'row',
@@ -579,7 +582,7 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 10,
         paddingVertical: 6,
-        fontSize: 14,
+        fontSize: 14 * scale,
         minWidth: 64,
         textAlign: 'center',
     },
@@ -597,7 +600,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     modalButtonText: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '700',
     },
     modalButtonDisabled: {
@@ -614,6 +617,11 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 14,
     },
     pickerItemText: {
-        fontSize: 16,
+        fontSize: 16 * scale,
     },
 });
+
+export const useStyles = () => {
+    const scale = useFontScale();
+    return useMemo(() => makeStyles(scale), [scale]);
+};

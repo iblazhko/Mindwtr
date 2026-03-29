@@ -7,9 +7,10 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useThemeColors } from '@/hooks/use-theme-colors';
 import { useLanguage } from '@/contexts/language-context';
 
-import { styles } from './settings.styles';
+import { useStyles } from './settings.styles';
 
 export function SubHeader({ title }: { title: string }) {
+    const styles = useStyles();
     const tc = useThemeColors();
 
     return (
@@ -32,6 +33,7 @@ export function MenuItem({
     indicatorColor?: string;
     indicatorAccessibilityLabel?: string;
 }) {
+    const styles = useStyles();
     const tc = useThemeColors();
 
     return (
@@ -52,6 +54,7 @@ export function MenuItem({
 }
 
 export function SettingsTopBar() {
+    const styles = useStyles();
     const router = useRouter();
     const { t } = useLanguage();
     const tc = useThemeColors();

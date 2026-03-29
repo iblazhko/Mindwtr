@@ -11,7 +11,7 @@ import { useTheme } from '../contexts/theme-context';
 import { useThemeColors } from '@/hooks/use-theme-colors';
 import { buildAIConfig, isAIKeyRequired, loadAIKey } from '../lib/ai-config';
 import { logWarn } from '../lib/app-log';
-import { styles } from './inbox-processing-modal.styles';
+import { useStyles } from './inbox-processing-modal.styles';
 
 type InboxProcessingModalProps = {
   visible: boolean;
@@ -21,6 +21,7 @@ type InboxProcessingModalProps = {
 const MAX_TOKEN_SUGGESTIONS = 6;
 
 export function InboxProcessingModal({ visible, onClose }: InboxProcessingModalProps) {
+  const styles = useStyles();
   const { tasks, projects, areas, settings, updateTask, deleteTask, addProject } = useTaskStore();
   const { t, language } = useLanguage();
   const { isDark } = useTheme();

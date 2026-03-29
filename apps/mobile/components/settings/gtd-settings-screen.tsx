@@ -31,7 +31,7 @@ import {
 import type { SettingsScreen } from './settings.constants';
 import { useSettingsLocalization, useSettingsScrollContent } from './settings.hooks';
 import { MenuItem, SettingsTopBar, SubHeader } from './settings.shell';
-import { styles } from './settings.styles';
+import { useStyles } from './settings.styles';
 
 type GtdScreen =
     | 'gtd'
@@ -46,6 +46,7 @@ export function GtdSettingsScreen({
     onNavigate: (screen: SettingsScreen) => void;
     screen: GtdScreen;
 }) {
+    const styles = useStyles();
     const tc = useThemeColors();
     const insets = useSafeAreaInsets();
     const { isChineseLanguage, language, localize, t } = useSettingsLocalization();

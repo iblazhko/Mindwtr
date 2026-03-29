@@ -1,6 +1,9 @@
+import { useMemo } from 'react';
 import { StyleSheet } from 'react-native';
+import { useFontScale } from '@/contexts/font-scale-context';
 
-export const styles = StyleSheet.create({
+export const makeStyles = (scale: number) => StyleSheet.create({
+
     container: { flex: 1 },
     scrollView: { flex: 1 },
     scrollContent: { padding: 16 },
@@ -22,27 +25,27 @@ export const styles = StyleSheet.create({
         opacity: 0,
     },
     topBarTitle: {
-        fontSize: 17,
+        fontSize: 17 * scale,
         fontWeight: '700',
     },
     subHeader: { flexDirection: 'row', alignItems: 'center', padding: 16, gap: 12 },
-    backButton: { fontSize: 16, fontWeight: '500' },
-    subHeaderTitle: { fontSize: 18, fontWeight: '600' },
-    description: { fontSize: 13, marginBottom: 12, paddingHorizontal: 4, lineHeight: 18 },
-    sectionTitle: { fontSize: 13, fontWeight: '600', textTransform: 'uppercase', marginBottom: 8, marginLeft: 4 },
+    backButton: { fontSize: 16 * scale, fontWeight: '500' },
+    subHeaderTitle: { fontSize: 18 * scale, fontWeight: '600' },
+    description: { fontSize: 13 * scale, marginBottom: 12, paddingHorizontal: 4, lineHeight: 18 * scale },
+    sectionTitle: { fontSize: 13 * scale, fontWeight: '600', textTransform: 'uppercase', marginBottom: 8, marginLeft: 4 },
     menuCard: { borderRadius: 12, overflow: 'hidden' },
     menuItem: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 16, borderBottomWidth: 1 },
-    menuLabel: { fontSize: 17, fontWeight: '400' },
-    chevron: { fontSize: 24, fontWeight: '300' },
+    menuLabel: { fontSize: 17 * scale, fontWeight: '400' },
+    chevron: { fontSize: 24 * scale, fontWeight: '300' },
     menuRight: { flexDirection: 'row', alignItems: 'center', gap: 8 },
     updateDot: { width: 8, height: 8, borderRadius: 4, backgroundColor: '#ef4444' },
     settingCard: { borderRadius: 12, overflow: 'hidden' },
     settingRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 16 },
     settingRowColumn: { padding: 16 },
-    sectionHeaderText: { fontSize: 12, fontWeight: '600', textTransform: 'uppercase', letterSpacing: 0.6, paddingHorizontal: 16, marginTop: 12, marginBottom: 4 },
+    sectionHeaderText: { fontSize: 12 * scale, fontWeight: '600', textTransform: 'uppercase', letterSpacing: 0.6, paddingHorizontal: 16, marginTop: 12, marginBottom: 4 },
     taskEditorPresetRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, paddingHorizontal: 16, paddingBottom: 16 },
     taskEditorPresetButton: { paddingHorizontal: 12, paddingVertical: 8, borderRadius: 999, borderWidth: 1 },
-    taskEditorPresetButtonText: { fontSize: 13, fontWeight: '700' },
+    taskEditorPresetButtonText: { fontSize: 13 * scale, fontWeight: '700' },
     taskEditorSectionHeaderRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 16 },
     taskEditorSectionHeaderMain: { flexDirection: 'row', alignItems: 'center', gap: 10, flex: 1, marginRight: 12 },
     taskEditorSectionCountBadge: {
@@ -53,7 +56,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    taskEditorSectionCountText: { fontSize: 12, fontWeight: '700' },
+    taskEditorSectionCountText: { fontSize: 12 * scale, fontWeight: '700' },
     taskEditorCompactRow: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14 },
     taskEditorCompactRowBorder: { borderTopWidth: 1 },
     taskEditorVisibilityBadge: {
@@ -67,7 +70,7 @@ export const styles = StyleSheet.create({
     },
     taskEditorSectionChips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 12 },
     taskEditorSectionChip: { paddingHorizontal: 10, paddingVertical: 6, borderRadius: 999, borderWidth: 1 },
-    taskEditorSectionChipText: { fontSize: 12, fontWeight: '600' },
+    taskEditorSectionChipText: { fontSize: 12 * scale, fontWeight: '600' },
     taskEditorSheetOverlay: {
         flex: 1,
         backgroundColor: 'rgba(0,0,0,0.35)',
@@ -100,7 +103,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 12,
     },
     taskEditorSheetActionDisabled: { opacity: 0.45 },
-    taskEditorSheetActionText: { fontSize: 14, fontWeight: '600' },
+    taskEditorSheetActionText: { fontSize: 14 * scale, fontWeight: '600' },
     taskEditorSheetDoneButton: {
         marginHorizontal: 16,
         marginTop: 16,
@@ -109,18 +112,18 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    taskEditorSheetDoneButtonText: { color: '#FFFFFF', fontSize: 15, fontWeight: '700' },
+    taskEditorSheetDoneButtonText: { color: '#FFFFFF', fontSize: 15 * scale, fontWeight: '700' },
     settingInfo: { flex: 1, marginRight: 16 },
-    settingLabel: { fontSize: 16, fontWeight: '500' },
-    settingDescription: { fontSize: 13, marginTop: 2 },
-    settingValue: { fontSize: 16 },
-    linkText: { fontSize: 16, color: '#3B82F6' },
+    settingLabel: { fontSize: 16 * scale, fontWeight: '500' },
+    settingDescription: { fontSize: 13 * scale, marginTop: 2 },
+    settingValue: { fontSize: 16 * scale },
+    linkText: { fontSize: 16 * scale, color: '#3B82F6' },
     helpBox: { borderRadius: 12, padding: 16, marginBottom: 8, borderWidth: 1 },
-    helpTitle: { fontSize: 15, fontWeight: '600', marginBottom: 8 },
-    helpText: { fontSize: 13, lineHeight: 20 },
+    helpTitle: { fontSize: 15 * scale, fontWeight: '600', marginBottom: 8 },
+    helpText: { fontSize: 13 * scale, lineHeight: 20 * scale },
     backendToggle: { flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' },
     backendOption: { paddingHorizontal: 12, paddingVertical: 6, borderRadius: 16, borderWidth: 1 },
-    backendOptionText: { fontSize: 13, fontWeight: '700' },
+    backendOptionText: { fontSize: 13 * scale, fontWeight: '700' },
     dropdownButton: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -133,11 +136,11 @@ export const styles = StyleSheet.create({
     },
     dropdownValue: {
         flex: 1,
-        fontSize: 13,
+        fontSize: 13 * scale,
         fontWeight: '600',
     },
     dropdownChevron: {
-        fontSize: 14,
+        fontSize: 14 * scale,
         fontWeight: '600',
     },
     modelInputRow: {
@@ -151,7 +154,7 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
         paddingHorizontal: 12,
         paddingVertical: 10,
-        fontSize: 14,
+        fontSize: 14 * scale,
     },
     modelSuggestButton: {
         borderWidth: 1,
@@ -160,7 +163,7 @@ export const styles = StyleSheet.create({
         paddingVertical: 10,
     },
     modelSuggestButtonText: {
-        fontSize: 12,
+        fontSize: 12 * scale,
         fontWeight: '600',
     },
     pickerOverlay: {
@@ -176,7 +179,7 @@ export const styles = StyleSheet.create({
         maxHeight: '70%',
     },
     pickerTitle: {
-        fontSize: 16,
+        fontSize: 16 * scale,
         fontWeight: '700',
         marginBottom: 12,
     },
@@ -196,7 +199,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     pickerOptionText: {
-        fontSize: 13,
+        fontSize: 13 * scale,
         fontWeight: '600',
     },
     timePickerActions: {
@@ -212,9 +215,14 @@ export const styles = StyleSheet.create({
         paddingVertical: 8,
     },
     timePickerActionText: {
-        fontSize: 15,
+        fontSize: 15 * scale,
         fontWeight: '600',
     },
     inputGroup: { padding: 16 },
-    textInput: { marginTop: 8, borderWidth: 1, borderRadius: 8, paddingHorizontal: 12, paddingVertical: 10, fontSize: 14 },
+    textInput: { marginTop: 8, borderWidth: 1, borderRadius: 8, paddingHorizontal: 12, paddingVertical: 10, fontSize: 14 * scale },
 });
+
+export const useStyles = () => {
+    const scale = useFontScale();
+    return useMemo(() => makeStyles(scale), [scale]);
+};

@@ -1,6 +1,9 @@
+import { useMemo } from 'react';
 import { StyleSheet } from 'react-native';
+import { useFontScale } from '@/contexts/font-scale-context';
 
-export const styles = StyleSheet.create({
+export const makeStyles = (scale: number) => StyleSheet.create({
+
   overlay: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.7)',
@@ -22,7 +25,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   headerClose: {
-    fontSize: 22,
+    fontSize: 22 * scale,
     fontWeight: '700',
   },
   progressContainer: {
@@ -30,7 +33,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   progressText: {
-    fontSize: 12,
+    fontSize: 12 * scale,
     marginBottom: 4,
   },
   progressBar: {
@@ -44,7 +47,7 @@ export const styles = StyleSheet.create({
     borderRadius: 2,
   },
   skipBtn: {
-    fontSize: 16,
+    fontSize: 16 * scale,
     fontWeight: '600',
     color: '#3B82F6',
   },
@@ -88,15 +91,15 @@ export const styles = StyleSheet.create({
     minWidth: 72,
   },
   loadingText: {
-    fontSize: 14,
+    fontSize: 14 * scale,
   },
   taskTitle: {
-    fontSize: 22,
+    fontSize: 22 * scale,
     fontWeight: '700',
     marginBottom: 6,
   },
   taskDescription: {
-    fontSize: 14,
+    fontSize: 14 * scale,
     marginBottom: 0,
   },
   descriptionScroll: {
@@ -115,7 +118,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 999,
-    fontSize: 12,
+    fontSize: 12 * scale,
     borderWidth: 1,
     overflow: 'hidden',
   },
@@ -146,7 +149,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   aiActionText: {
-    fontSize: 12,
+    fontSize: 12 * scale,
     fontWeight: '600',
   },
   stepContainer: {
@@ -156,12 +159,12 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   stepQuestion: {
-    fontSize: 18,
+    fontSize: 18 * scale,
     fontWeight: '700',
     marginBottom: 6,
   },
   stepHint: {
-    fontSize: 13,
+    fontSize: 13 * scale,
     marginBottom: 12,
   },
   buttonRow: {
@@ -203,7 +206,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   bigButtonText: {
-    fontSize: 16,
+    fontSize: 16 * scale,
     fontWeight: '700',
     color: '#FFFFFF',
   },
@@ -219,7 +222,7 @@ export const styles = StyleSheet.create({
     gap: 8,
   },
   refineLabel: {
-    fontSize: 12,
+    fontSize: 12 * scale,
     marginBottom: 4,
   },
   refineTitleInput: {
@@ -227,14 +230,14 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 12,
     paddingVertical: 10,
-    fontSize: 16,
+    fontSize: 16 * scale,
   },
   refineDescriptionInput: {
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: 12,
     paddingVertical: 10,
-    fontSize: 14,
+    fontSize: 14 * scale,
     textAlignVertical: 'top',
   },
   waitingInput: {
@@ -242,7 +245,7 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 12,
     paddingVertical: 10,
-    fontSize: 14,
+    fontSize: 14 * scale,
   },
   startDateRow: {
     marginTop: 12,
@@ -261,7 +264,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
   },
   startDateButtonText: {
-    fontSize: 13,
+    fontSize: 13 * scale,
   },
   startDateClear: {
     paddingHorizontal: 10,
@@ -270,7 +273,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
   },
   startDateClearText: {
-    fontSize: 12,
+    fontSize: 12 * scale,
   },
   selectedContextsContainer: {
     padding: 12,
@@ -295,7 +298,7 @@ export const styles = StyleSheet.create({
   },
   selectedTokenText: {
     color: '#FFFFFF',
-    fontSize: 12,
+    fontSize: 12 * scale,
   },
   customContextContainer: {
     flexDirection: 'row',
@@ -320,7 +323,7 @@ export const styles = StyleSheet.create({
   },
   addContextButtonText: {
     color: '#FFFFFF',
-    fontSize: 18,
+    fontSize: 18 * scale,
     fontWeight: '700',
   },
   tokenSuggestionsContainer: {
@@ -336,11 +339,11 @@ export const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   tokenSuggestionText: {
-    fontSize: 13,
+    fontSize: 13 * scale,
     fontWeight: '600',
   },
   tokenSectionTitle: {
-    fontSize: 12,
+    fontSize: 12 * scale,
     fontWeight: '600',
     marginBottom: 6,
   },
@@ -368,7 +371,7 @@ export const styles = StyleSheet.create({
     marginRight: 8,
   },
   contextChipText: {
-    fontSize: 12,
+    fontSize: 12 * scale,
     fontWeight: '600',
   },
   projectSearchRow: {
@@ -435,7 +438,7 @@ export const styles = StyleSheet.create({
   },
   bottomNextButtonText: {
     color: '#FFFFFF',
-    fontSize: 16,
+    fontSize: 16 * scale,
     fontWeight: '700',
   },
   singleSection: {
@@ -444,3 +447,8 @@ export const styles = StyleSheet.create({
     marginBottom: 18,
   },
 });
+
+export const useStyles = () => {
+    const scale = useFontScale();
+    return useMemo(() => makeStyles(scale), [scale]);
+};

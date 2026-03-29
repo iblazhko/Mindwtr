@@ -5,7 +5,7 @@ import { translateText } from '@mindwtr/core';
 
 import { useLanguage } from '@/contexts/language-context';
 
-import { styles } from './settings.styles';
+import { useStyles } from './settings.styles';
 
 export function useSettingsLocalization() {
     const { language, t, setLanguage } = useLanguage();
@@ -26,10 +26,11 @@ export function useSettingsLocalization() {
 }
 
 export function useSettingsScrollContent(paddingBottom = 16) {
+    const styles = useStyles();
     const insets = useSafeAreaInsets();
 
     return useMemo(
         () => [styles.scrollContent, { paddingBottom: paddingBottom + insets.bottom }],
-        [insets.bottom, paddingBottom],
+        [styles, insets.bottom, paddingBottom],
     );
 }

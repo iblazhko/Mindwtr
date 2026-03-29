@@ -9,7 +9,7 @@ import * as Linking from 'expo-linking';
 import * as Sharing from 'expo-sharing';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
-import { projectsScreenStyles as styles } from '@/app/(drawer)/projects-screen.styles';
+import { useStyles } from '@/app/(drawer)/projects-screen.styles';
 import {
   formatProjectReviewDate,
   normalizeProjectTag,
@@ -32,6 +32,7 @@ import { AREA_FILTER_ALL, AREA_FILTER_NONE } from '@/lib/area-filter';
 import { openContextsScreen, openProjectScreen } from '@/lib/task-meta-navigation';
 
 export default function ProjectsScreen() {
+  const styles = useStyles();
   const { projects, tasks, addProject, updateProject, deleteProject, toggleProjectFocus, addArea, updateArea, deleteArea, reorderAreas, updateTask, setHighlightTask } = useTaskStore();
   const { t } = useLanguage();
   const tc = useThemeColors();

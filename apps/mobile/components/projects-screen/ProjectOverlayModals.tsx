@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, Modal, Pressable, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { type Attachment } from '@mindwtr/core';
 
-import { projectsScreenStyles as styles } from '@/app/(drawer)/projects-screen.styles';
+import { useStyles } from '@/app/(drawer)/projects-screen.styles';
 
 type ThemeColors = {
     border: string;
@@ -40,6 +40,7 @@ export function ProjectLinkModal({
     onClose,
     onSave,
 }: ProjectLinkModalProps) {
+    const styles = useStyles();
     return (
         <Modal
             visible={visible}
@@ -100,6 +101,7 @@ export function ProjectImagePreviewModal({
     t,
     onClose,
 }: ProjectImagePreviewModalProps) {
+    const styles = useStyles();
     return (
         <Modal
             visible={visible}
@@ -158,6 +160,7 @@ export function ProjectTagPickerModal({
     onClose,
     onToggleTag,
 }: ProjectTagPickerModalProps) {
+    const styles = useStyles();
     return (
         <Modal
             visible={visible}

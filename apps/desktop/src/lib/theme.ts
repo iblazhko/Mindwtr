@@ -141,6 +141,14 @@ export const applyThemeMode = (mode: DesktopThemeMode | null, systemTheme?: Syst
     if (mode === 'sepia') root.classList.add('theme-sepia');
 };
 
+export const DEFAULT_FONT_SCALE = 100;
+export const BASE_FONT_SIZE_PX = 16;
+
+export const applyFontScale = (scale: number) => {
+    const basePx = BASE_FONT_SIZE_PX * (scale / DEFAULT_FONT_SCALE);
+    document.documentElement.style.setProperty('--ui-base-font-size', `${basePx}px`);
+};
+
 export const resolveNativeTheme = (mode: DesktopThemeMode | null): 'light' | 'dark' | null => {
     if (!mode || mode === 'system') return null;
     if (mode === 'dark' || mode === 'nord') return 'dark';

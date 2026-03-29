@@ -252,7 +252,7 @@
   }
 
   html {
-    font-size: var(--ui-base-font-size, 16px);
+    font-size: var(--ui-base-font-size);
     /* Ensure consistent sizing on WebKitGTK */
   }
 

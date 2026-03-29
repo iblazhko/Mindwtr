@@ -53,7 +53,7 @@ import { useObsidianSettings } from './settings/useObsidianSettings';
 import { useSyncSettings } from './settings/useSyncSettings';
 import { usePerformanceMonitor } from '../../hooks/usePerformanceMonitor';
 import { checkBudget } from '../../config/performanceBudgets';
-import { THEME_STORAGE_KEY, applyThemeMode, coerceDesktopThemeMode, mapSyncedThemeToDesktop, resolveNativeTheme, type DesktopThemeMode } from '../../lib/theme';
+import { THEME_STORAGE_KEY, applyThemeMode, applyFontScale, coerceDesktopThemeMode, mapSyncedThemeToDesktop, resolveNativeTheme, DEFAULT_FONT_SCALE, type DesktopThemeMode } from '../../lib/theme';
 import { type GlobalQuickAddShortcutSetting } from '../../lib/global-quick-add-shortcut';
 
 type ThemeMode = DesktopThemeMode;
@@ -172,6 +172,7 @@ export function SettingsView() {
     const closeBehavior = settings?.window?.closeBehavior ?? 'ask';
     const trayVisible = settings?.window?.showTray !== false;
     const densityMode = (settings?.appearance?.density === 'compact' ? 'compact' : 'comfortable') as DensityMode;
+    const fontScale = settings?.appearance?.fontScale ?? DEFAULT_FONT_SCALE;
     const dateFormat = normalizeDateFormatSetting(settings?.dateFormat);
     const timeFormat = normalizeTimeFormatSetting(settings?.timeFormat);
     const [saved, setSaved] = useState(false);
@@ -457,6 +458,10 @@ export function SettingsView() {
     }, [loggingEnabled]);
 
     useEffect(() => {
+        applyFontScale(fontScale);
+    }, [fontScale]);
+
+    useEffect(() => {
         applyThemeMode(themeMode);
 
         if (!isTauri) return;
@@ -483,6 +488,17 @@ export function SettingsView() {
         })
             .then(showSaved)
             .catch((error) => reportError('Failed to update density', error));
+    };
+
+    const saveFontScalePreference = (scale: number) => {
+        updateSettings({
+            appearance: {
+                ...(settings?.appearance ?? {}),
+                fontScale: scale,
+            },
+        })
+            .then(showSaved)
+            .catch((error) => reportError('Failed to update font scale', error));
     };
 
     const saveLanguagePreference = (lang: Language) => {
@@ -1009,6 +1025,8 @@ export function SettingsView() {
                     onThemeChange={saveThemePreference}
                     densityMode={densityMode}
                     onDensityChange={saveDensityPreference}
+                    fontScale={fontScale}
+                    onFontScaleChange={saveFontScalePreference}
                     language={language}
                     onLanguageChange={saveLanguagePreference}
                     weekStart={weekStart}

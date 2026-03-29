@@ -3,6 +3,7 @@ import {
     type GlobalQuickAddShortcutSetting,
     getGlobalQuickAddShortcutOptions,
 } from '../../../lib/global-quick-add-shortcut';
+import { DEFAULT_FONT_SCALE } from '../../../lib/theme';
 
 type ThemeMode = 'system' | 'light' | 'dark' | 'eink' | 'nord' | 'sepia';
 type DensityMode = 'comfortable' | 'compact';
@@ -20,6 +21,8 @@ type Labels = {
     densityDesc: string;
     densityComfortable: string;
     densityCompact: string;
+    fontScale: string;
+    fontScaleDesc: string;
     system: string;
     light: string;
     dark: string;
@@ -67,6 +70,8 @@ type SettingsMainPageProps = {
     onThemeChange: (mode: ThemeMode) => void;
     densityMode: DensityMode;
     onDensityChange: (mode: DensityMode) => void;
+    fontScale: number;
+    onFontScaleChange: (scale: number) => void;
     language: Language;
     onLanguageChange: (lang: Language) => void;
     weekStart: WeekStart;
@@ -150,6 +155,8 @@ export function SettingsMainPage({
     onThemeChange,
     densityMode,
     onDensityChange,
+    fontScale,
+    onFontScaleChange,
     language,
     onLanguageChange,
     weekStart,
@@ -215,6 +222,31 @@ export function SettingsMainPage({
                         <option value="comfortable">{t.densityComfortable}</option>
                         <option value="compact">{t.densityCompact}</option>
                     </select>
+                </SettingsRow>
+                <SettingsRow title={t.fontScale} description={t.fontScaleDesc}>
+                    <div className="flex items-center gap-2">
+                        <span className="text-xs text-muted-foreground w-8 text-right">50%</span>
+                        <input
+                            type="range"
+                            min={50}
+                            max={250}
+                            step={5}
+                            value={fontScale}
+                            onChange={(e) => onFontScaleChange(Number(e.target.value))}
+                            className="w-32 accent-primary"
+                        />
+                        <span className="text-xs text-muted-foreground w-10">250%</span>
+                        <span className="text-[0.8125rem] font-medium w-10 text-right tabular-nums">{fontScale}%</span>
+                        {fontScale !== DEFAULT_FONT_SCALE && (
+                            <button
+                                type="button"
+                                onClick={() => onFontScaleChange(DEFAULT_FONT_SCALE)}
+                                className="text-xs px-2 py-1 rounded border border-border text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                            >
+                                Reset
+                            </button>
+                        )}
+                    </div>
                 </SettingsRow>
             </SettingsCard>
 
